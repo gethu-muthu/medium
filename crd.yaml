@@ -1,0 +1,26 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: memoryoptimizers.optimize.k8s.example.com
+spec:
+  group: optimize.k8s.example.com
+  versions:
+    - name: v1alpha1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                minMemoryThreshold:
+                  type: number
+                  description: Minimum percentage of memory to retain
+                maxDownscalePercent:
+                  type: number
+                  description: Maximum percentage to reduce memory
+                observationPeriod:
+                  type: string
+                  description: Duration to observe memory usage

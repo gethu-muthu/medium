@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: memory-optimizer-config
+data:
+  min_threshold: "0.7"
+  max_downscale: "0.3"
+  observation_period: "7d"
+  enable_auto_scaling: "true"
